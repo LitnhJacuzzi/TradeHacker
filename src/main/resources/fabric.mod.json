@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "tradehacker",
+	"version": "${version}",
+	"name": "TradeHacker",
+	"description": "Allow players in creative mode to get villagers' goods without paying.",
+	"authors": [
+		"LitnhJacuzzi"
+	],
+	"contact": {
+	
+	},
+	"license": "GPL 3.0",
+	"icon": "assets/tradehacker/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.litnhjacuzzi.tradehacker.TradeHacker"
+		]
+	},
+	"mixins": [
+		"tradehacker.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": ">=1.17",
+		"java": ">=16",
+		"fabric": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

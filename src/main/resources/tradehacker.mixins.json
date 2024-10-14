@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "org.litnhjacuzzi.tradehacker.mixin",
+	"compatibilityLevel": "JAVA_16",
+	"mixins": [
+		"HandledScreenMixin",
+		"MerchantScreenMixin",
+		"MerchantScreenHandlerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
