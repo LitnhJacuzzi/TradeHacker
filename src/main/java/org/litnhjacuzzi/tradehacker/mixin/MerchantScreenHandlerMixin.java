@@ -7,7 +7,7 @@ import net.minecraft.screen.MerchantScreenHandler;
 import net.minecraft.village.Merchant;
 
 @Mixin(MerchantScreenHandler.class)
-public interface MerchantScreenHandlerMixin 
+public interface MerchantScreenHandlerMixin extends ScreenHandlerMixin
 {
 	@Accessor("merchant")
 	Merchant getMerchant();
