@@ -32,13 +32,12 @@ public class ServerPlayNetworkHandlerMixin {
 	}
 	
 	private void hackItem(PlayerEntity player, int selectedIndex, boolean isShiftPressed) {
-		MerchantScreenHandlerMixin handler = (MerchantScreenHandlerMixin) player.currentScreenHandler;
-		Merchant merchant = (Merchant) handler.getMerchant();
+		Merchant merchant = (Merchant) ((MerchantScreenHandlerMixin) player.currentScreenHandler).getMerchant();
 		ItemStack targetItem = merchant.getOffers().get(selectedIndex).copySellItem();
 		if(isShiftPressed) {
 			targetItem.setCount(targetItem.getMaxCount());
 		}
-		handler.invokeInsertItem(targetItem, 3, 39, true);
-		handler.invokeSendContentUpdates();
+		player.getInventory().insertStack(targetItem);
+		player.currentScreenHandler.sendContentUpdates();
 	}
 }
